@@ -12,9 +12,9 @@ public interface CustomerService {
 
     Flux<ReadCustomerDTO> findAll();
 
-    Mono<Void> createCustomer(CreateCustomerDTO createCustomerDTO);
+    Mono<ReadCustomerDTO> createCustomer(CreateCustomerDTO createCustomerDTO);
 
-    Mono<Void> updateCustomer(UpdateCustomerDTO updateCustomerDTO);
+    Mono<Void> updateCustomer(UpdateCustomerDTO updateCustomerDTO,Long customerId);
 
     Mono<Void> deleteCustomer(Long idCustomer);
 }

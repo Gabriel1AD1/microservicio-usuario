@@ -24,14 +24,18 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
-    compileOnly("org.projectlombok:lombok")
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+    implementation("org.mapstruct:mapstruct:1.5.2.Final")  // Dependencia principal de MapStruct
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.2.Final")  // Procesador de anotaciones de MapStruct
+    implementation("org.springframework.boot:spring-boot-starter-webflux:3.0.10")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:3.0.10")
+    runtimeOnly("org.postgresql:r2dbc-postgresql:1.0.2.RELEASE")
+    implementation("org.springdoc:springdoc-openapi-starter-webflux-api:2.8.3")
+    implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("io.projectreactor:reactor-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("io.projectreactor:reactor-test:3.5.9")
 }
 
 tasks.withType<Test> {
